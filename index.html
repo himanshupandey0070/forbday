@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET FREE LOVE N CUDDLES</title>
+    <style>
+        body {
+            background-image: url('oFb4gO.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .error {
+            color: red;
+        }
+
+        table {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        td {
+            padding: 20px;
+            text-align: center;
+        }
+
+        input[type="button"], input[type="reset"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" height="200" width="500">
+        <tr>
+            <td colspan="8">
+                <h1>GET FREE LOVE N CUDDLES</h1>
+                <form id="sampleForm">
+                    Select your name:
+                    <input type="radio" name="select your name" value="SIMRAN SHUKLA"> SIMRAN SHUKLA
+                    <input type="radio" name="select your name" value="RAS MALAI"> RAS MALAI
+                    <input type="radio" name="select your name" value="SIMS"> SIMS<br><br>
+                    DOB: <input type="date" id="dob"><br><br>
+                    DO YOU LOVE ME:
+                    <select id="DO YOU LOVE ME">
+                        <option value="">Select</option>
+                        <option value="YES">YES</option>
+                        <option value="YES OFC">YES OFC</option>
+                        <option value="NO">NO</option>
+                    </select><br><br>
+                    <input type="button" value="Submit" onclick="validateForm()">
+                    <input type="reset" value="Reset">
+                </form>
+                <p class="error" id="error"></p>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function validateForm() {
+            var name = document.querySelector('input[name="select your name"]:checked');
+            var love = document.getElementById("DO YOU LOVE ME").value;
+            var dob = document.getElementById("dob").value;
+            var isValid = true;
+            var errorMessage = "";
+
+            if (!name || name.value !== "RAS MALAI") {
+                isValid = false;
+                errorMessage += "Please select the correct name.\n";
+            }
+
+            if (love !== "YES" && love !== "YES OFC") {
+                isValid = false;
+                errorMessage += "Please select a valid option for 'DO YOU LOVE ME'.\n";
+            }
+
+            if (dob !== "2005-07-23" && dob !== "2005-07-24") {
+                isValid = false;
+                errorMessage += "Please select a valid DOB.\n";
+            }
+
+            if (!isValid) {
+                alert(errorMessage);
+            } else {
+                window.location.href = "thank-you.html";
+            }
+        }
+    </script>
+</body>
+</html>

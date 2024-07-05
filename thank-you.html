@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            background-color: #f0e6f6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('light_hearts_and_hugs_bg.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .content {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .star {
+            position: absolute;
+            bottom: -100px;
+            background-color: yellow; /* Yellow color for stars */
+            border-radius: 50%;
+            animation: rise 10s infinite;
+        }
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-110vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 style="color: #ff69b4;">Thank You</h1>
+        <p style="color: #ff4500;">Hii cutiepie, thank you very much for loving me and making me happy all the time. I hope I'm able to give you the love you want. Enjoy your day, baby. May God bless you with happiness and good health. You deserve everything you want and you will surely get it. Baki to idk kya kahu mujhse yhi bana to kar diya thoda sa lol... hope tumhe ek smile jarur mili ho isse... ab dekho real feelings to hindi me hi samjhayi ja sakti hai baby... I really love you so much, tum ese hi khush rehna, hasti khelti. Waise or ek chij hai tumhare liye hehe...</p>
+        <button onclick="playSurpriseVideo()">Click here for surprise</button>
+        <button onclick="playHugsVideo()">Click here for hugs</button>
+    </div>
+    <div class="stars" id="star-container"></div>
+    <script>
+        function playSurpriseVideo() {
+            const videoUrl = 'giphy.gif'; // Replace with the actual video URL
+            window.open(videoUrl, '_blank');
+        }
+
+        function playHugsVideo() {
+            const videoUrl = 'giphy.gif'; // Replace with the actual video URL
+            window.open(videoUrl, '_blank');
+        }
+
+        function createStar() {
+            const starContainer = document.getElementById('star-container');
+            const star = document.createElement('div');
+            const size = Math.random() * 20 + 10; // Larger size for stars
+            const colors = ['#FFD700', '#FF8C00', '#FF4500']; // Yellow, orange, red colors
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            star.className = 'star';
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.backgroundColor = color;
+            star.style.animationDuration = `${Math.random() * 5 + 5}s`;
+
+            starContainer.appendChild(star);
+
+            setTimeout(() => {
+                starContainer.removeChild(star);
+            }, 10000);
+        }
+
+        setInterval(createStar, 300); // More frequent star generation
+    </script>
+</body>
+</html>
